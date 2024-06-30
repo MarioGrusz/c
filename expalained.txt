@@ -1,0 +1,14 @@
+&
+an address-of operator, it returns the memory address of a variable
+
+scanf("%lf", &radius);
+
+
+
+
+
+%: 
+
+this indicates the start of a format specifier
+
+printf("Circumference: %lf\n", circumference);
