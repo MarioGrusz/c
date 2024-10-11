@@ -5,10 +5,26 @@ scanf("%lf", &radius);
 
 
 
-
-
 %: 
 
 this indicates the start of a format specifier
 
 printf("Circumference: %lf\n", circumference);
+
+
+* (int* nums)
+
+Pointer declaration: When the asterisk appears before 
+a variable name during declaration, it indicates a pointer variable. 
+For example, in the line int* nums, nums is declared as a 
+pointer to an integer. A pointer variable doesn't store the 
+actual integer value itself, but instead, it stores 
+the memory address where the integer value is located.
+
+
+
+int main() {
+    // Your code here
+
+    return 0;  // Indicates successful completion
+}

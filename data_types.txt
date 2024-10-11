@@ -1,0 +1,27 @@
+int: Stores integers (whole numbers)
+
+float: Stores single-precision floating-point numbers (numbers with decimals)
+
+double: Stores double-precision floating-point numbers (more precise than float)
+
+char: Stores a single character
+
+
+
+Character: %c - Used to print or read a single character.
+Integer:
+
+    %d or %i - Used to print or read a signed decimal integer.
+
+    %u - Used to print or read an unsigned decimal integer.
+    %o - Used to print or read an unsigned octal integer (base-8).
+    %x - Used to print or read an unsigned hexadecimal integer (base-16).
+
+Floating-point:
+
+    %f - Used to print or read a single-precision floating-point number.
+    %lf - Used to print or read a double-precision floating-point number.
+
+String: %s - Used to print a null-terminated string (sequence of characters).
+
+Pointer: %p - Used to print a memory address (location in memory)

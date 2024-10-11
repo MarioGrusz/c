@@ -26,11 +26,13 @@
 
 void print();
 void sum();
+void multiplication();
 
 
 int main() {
     // print();
-    sum();
+    // sum();
+    multiplication();
     return 0;
 }
 
@@ -62,4 +64,19 @@ void sum(){
 
     printf("\nSum of entered number is %d\n", numsSum);
 
+}
+
+
+void multiplication() {
+
+    int number;
+    printf("\nPlease enter a number from 1 to 100: ");
+    scanf("%d", &number);
+
+    int i;
+
+    for (i = 1; i <= number; i++) {
+        int result = i * number;
+        printf("Multiplication %d by %d is equal to: %d\n", i, number, result);
+    }
 }

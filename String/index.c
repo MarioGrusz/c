@@ -34,8 +34,6 @@ void firstLower(){
 
     printf("%s", string1);
 
-    strnc
-
 }
 
 

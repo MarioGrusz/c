@@ -1,0 +1,23 @@
+How to create array in C:
+
+
+1. Fixed-size array:
+int numbers[8] = {1, 1, 2, 2, 3, 4, 4, 5};
+This declares an array numbers with a fixed size of 8
+
+2.Initializer list (C99 onwards):
+int numbers[] = {1, 1, 2, 2, 3, 4, 4, 5};
+Size of the array based on the number of elements provided in the initializer
+
+
+
+
+sizeof()
+is a built-in operator in C that returns the size of a variable or expression in bytes.
+
+
+int numsSize = sizeof(nums) / sizeof(nums[0]);
+sizeof(nums) gives you the total size of the nums array in bytes.
+nums[0] refers to the first element.
+sizeof(nums[0]) calculates the size of a single element in the array, 
+which is the size of an integer in this case (assuming nums is an integer array).

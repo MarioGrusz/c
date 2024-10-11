@@ -1,0 +1,65 @@
+
+
+A C function prototype is a statement that informs the compiler 
+about a function’s name, return type, and the number and data types 
+of its parameters. This information allows the compiler to verify 
+that function calls and definitions match in terms of parameters 
+and their data types. Function prototypes are necessary when the 
+function is called before it’s defined in the program but are 
+optional if the function definition comes before the function call.
+
+
+
+// C program to illustrate the function prototype
+#include <stdio.h>
+ 
+// Function prototype
+float calculateRectangleArea(float length, float width);
+ 
+int main()
+{
+    float length = 5.0;
+    float width = 3.0;
+ 
+    // Function call
+    float area = calculateRectangleArea(length, width);
+ 
+    printf("The area of the rectangle is: %.2f\n", area);
+ 
+    return 0;
+}
+ 
+// Function definition
+float calculateRectangleArea(float length, float width)
+{
+    return length * width;
+}
+
+
+
+
+return_type function_name(parameters) {
+  // Function body
+  return value;
+}
+
+Use code with caution.
+
+    return_type: The data type of the value returned by the function 
+    (e.g., int, float, char, struct, etc.).
+    function_name: The name of the function.
+    parameters: Optional list of parameters the function accepts.
+    return value: The value to be returned from the function
+
+
+int add(int a, int b) {
+  int sum = a + b;
+  return sum;
+}
+
+
+int main() {
+  int result = add(3, 5);
+  printf("The sum is: %d\n", result);
+  return 0;
+}
