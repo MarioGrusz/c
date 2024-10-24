@@ -1,0 +1,137 @@
+1.tasks = (Task *)realloc(tasks, (length +1) * sizeof(Task));
+
+
+What is Happening Here?
+
+    tasks:
+        This is a variable that holds the list of all tasks. It's a pointer to an array of Task structures.
+
+    realloc Function:
+        realloc stands for "reallocate". It is used to change the size of the memory block that tasks points to.
+        It helps you add more space if you need to store more tasks.
+
+    Why (length + 1) * sizeof(Task)?:
+        length: This keeps track of how many tasks are currently in the list.
+        length + 1: We add 1 because we want to add one more task.
+        sizeof(Task): This tells us how much memory one Task structure takes up. sizeof is a way to find out the size (in bytes) of a data type.
+        So, (length + 1) * sizeof(Task) calculates the total memory size needed for the current tasks plus one additional task.
+
+    Putting It All Together:
+        realloc(tasks, (length + 1) * sizeof(Task)) tries to resize the memory allocated for tasks.
+        If successful, it will return a pointer to the new memory location, which will be larger and able to hold one more task.
+        We then store this new pointer back in tasks.
+
+    Casting to (Task *):
+        The result of realloc is a void * (a generic pointer). By casting it to (Task *), we tell the compiler that this pointer is 
+        specifically for Task structures.
+        This ensures that the program knows how to handle the data in this memory.
+
+Simple Example
+
+Imagine you have a box that can hold 3 toys (tasks).
+
+    Initially: You have a box that holds 3 toys. That's your current memory.
+    Adding a toy: You want to add a 4th toy.
+    Using realloc: You tell the box to make room for 4 toys. So, you change the size of the box to hold one more toy.
+    Result: Now you have a box that can hold 4 toys, and you can put your new toy inside!
+
+Final Summary
+
+So, the line tasks = (Task *)realloc(tasks, (length + 1) * sizeof(Task)); is:
+
+    Changing the size of the tasks list to make space for one more task.
+    Storing the updated size back in tasks so you can now add the new task.
+
+
+
+
+
+
+
+2. tasks[length].task = (char *)malloc(strlen(task) + 1);
+
+What is Happening Here?
+
+    tasks[length]:
+        This refers to the specific task at position length in the tasks array.
+        We are accessing the Task structure that is about to be added to the list.
+
+    .task:
+        This is accessing the task part of the Task structure, which is where we 
+        will store the name of the task (like "Do homework").
+
+    strlen(task):
+        strlen is a function that calculates the length of the string in task. 
+        For example, if task is "Do homework", strlen(task) would return 10 because 
+        there are 10 characters in that string.
+
+    + 1:
+        We add 1 to the length because we need extra space for the null terminator ('\0'), 
+        which marks the end of a string in C. Without this, we wouldn't be able to 
+        tell where the string ends.
+        So, if strlen(task) is 10, we actually need 11 bytes of memory.
+
+    malloc(...):
+        malloc stands for "memory allocation". It reserves a block of memory 
+        of the specified size and returns a pointer to the beginning of that memory.
+        Here, we are asking for enough memory to store the task name plus the null terminator.
+
+    Casting to (char *):
+        The result of malloc is a generic pointer (void *), which can point to any data type. 
+        By casting it to (char *), we tell the compiler that this pointer will specifically 
+        hold characters (a string).
+
+Simple Example
+
+Imagine you want to write a name on a piece of paper:
+
+    Getting the Length: You measure how long the name is. If the name is "Alice", it’s 5 letters long.
+    Adding Space: You need a bit of extra space to put a dot at the end (the null terminator).
+    Allocating Memory: You get a new piece of paper that is big enough to hold 6 letters 
+    (5 for the name and 1 for the dot).
+    Storing the Name: Now you can write "Alice" on that paper.
+
+Final Summary
+
+So, the line tasks[length].task = (char *)malloc(strlen(task) + 1); is:
+
+    Creating a new space in memory to store the name of the task.
+    Reserving enough memory for the task name plus the space for the null terminator.
+    Assigning that memory space to the task part of the specific task at position length.
+
+
+
+
+
+3.  strcpy(tasks[length].task, task);
+
+What is Happening Here?
+
+    strcpy Function:
+        strcpy stands for "string copy". It's a function that copies one string into another.
+
+    tasks[length].task:
+        This refers to the task part of the Task structure at index length in the tasks array.
+        This is where we want to store the name of the task.
+
+    tasks:
+        copying the string that represents the task you want to add
+       
+
+
+Simple Example
+
+Think of this like writing a name on a piece of paper:
+
+    You have a blank piece of paper (where tasks[length].task is).
+    You want to write "Do homework" on it (this is the string you have in task).
+    Using strcpy, you would take the string "Do homework" and put it on that blank piece of paper.
+
+Final Summary
+
+The correct line strcpy(tasks[length].task, task); means:
+
+    Copy the string that represents the current task (from the task variable) 
+    into the task part of the specific task at index length.
+
+This will ensure that the name of the task is stored correctly.
