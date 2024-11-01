@@ -1,0 +1,22 @@
+MEMORY
+
+it has two features: ADDRESS and VALUE
+
+ADDRESS - location of memory, means where this memory lives 
+VALUE - data stored at that location
+
+
+int  x = 4;
+
+integer who is name is x is set to the value four
+
+
+int * pX = &x;
+
+integer pointer named pX is set to the address of x
+
+
+int y  = *pX;
+
+integer named Y is set to the thing  pointed by pX
+(passing x by reference instead of value)
